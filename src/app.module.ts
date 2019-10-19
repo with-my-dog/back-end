@@ -6,6 +6,8 @@ import AccountModule from './account/account.module';
 import AccountEntity from './account/infrastructure/entity/account.entity';
 import AppConfiguration from './app.config';
 import AuthModule from './auth/auth.module';
+import ShopEntity from './shop/infrastructure/entity/shop.entity';
+import ShopModule from './shop/shop.module';
 
 @Module({
   imports: [
@@ -18,9 +20,10 @@ import AuthModule from './auth/auth.module';
       password: AppConfiguration.DATABASE_PASSWORD,
       synchronize: true,
       logging: true,
-      entities: [AccountEntity],
+      entities: [AccountEntity, ShopEntity],
     }),
     AccountModule,
+    ShopModule,
     AuthModule,
   ],
   controllers: [AppController],

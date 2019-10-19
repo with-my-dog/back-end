@@ -10,10 +10,8 @@ async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(ApplicationModule, { cors: true });
 
   const options = new DocumentBuilder()
-    .setTitle('nest.js example')
-    .setDescription('Nest.js example project')
+    .setTitle('With my dog api')
     .setVersion('1.0')
-    .addBearerAuth('Authorization', 'header')
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
